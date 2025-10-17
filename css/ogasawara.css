@@ -129,6 +129,7 @@ body::before {
 
 .circle-link:hover .circle {
   transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgb(255, 255, 0);
 }
 
 /* === 動畫類別 === */
