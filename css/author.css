@@ -42,8 +42,8 @@ body {
 
 /* === 圓圈圖片 === */
 .author-image {
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;

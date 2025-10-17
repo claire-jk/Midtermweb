@@ -9,7 +9,7 @@ html, body {
   font-family: 'Zen Kurenaido', sans-serif;
   background-color: #d4d23d;
   color: #000000;
-  animation: fadeSlideIn 1s ease-out; /* 加這行 */
+  animation: fadeSlideIn 1s ease-out;
 }
 
 a {
@@ -67,8 +67,8 @@ a:hover {
 
 /* 滑鼠移上去的效果 */
 .image-section img:hover {
-  transform: scale(1.05); /* 稍微放大 */
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6); /* 陰影更濃 */
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
 }
 
 /* 文字區塊 */
@@ -80,10 +80,55 @@ a:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   font-size: 1.1em;
   line-height: 1.8;
+  transform: translateX(-40px); /* ✨往左移一點 */
 }
 
 .info-section p {
   margin-bottom: 15px;
+}
+
+/* 右側黃色半透明圓圈按鈕 */
+.circle-btn {
+  position: fixed;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 230, 0, 0.7);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 1000;
+}
+
+/* 圓圈裡的圖片設定 */
+.circle-btn img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.circle-btn:hover {
+  transform: translateY(-50%) scale(1.15);
+  background-color: rgba(255, 255, 100, 0.85);
+}
+
+/* 手機版圓圈移到底部中間 */
+@media (max-width: 768px) {
+  .circle-btn {
+    right: 50%;
+    top: auto;
+    bottom: 30px;
+    transform: translateX(50%);
+  }
+
+  .circle-btn:hover {
+    transform: translateX(50%) scale(1.15);
+  }
 }
 
 /* 響應式調整：手機垂直排列 */
@@ -102,24 +147,8 @@ a:hover {
     height: auto;
   }
 }
-/* 上箭頭連結 */
-.arrow-up {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 40px;
-  color: #f6ff00;
-  text-decoration: none;
-  transition: color 0.3s;
-  z-index: 1000;
-}
 
-.arrow-up:hover {
-  color: #000000;
-}
-
-/*淡入＋上滑*/
+/* 淡入＋上滑動畫 */
 @keyframes fadeSlideIn {
   from {
     opacity: 0;
@@ -178,7 +207,7 @@ a:hover {
 
 /* 子選單（初始隱藏） */
 .has-submenu .submenu {
-  display: none; /* 始終渲染在 DOM 中 */
+  display: none;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
@@ -190,7 +219,7 @@ a:hover {
 
 /* 子選單展開 */
 .has-submenu.active .submenu {
-  max-height: 500px; /* 動畫展開用，設為足夠容納內容的高度 */
+  max-height: 500px;
   margin-top: 10px;
   padding-top: -100px;
 }
