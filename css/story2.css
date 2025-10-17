@@ -47,6 +47,7 @@ a:hover {
   min-height: 100vh;
   gap: 40px;
   flex-wrap: wrap;
+  position: relative;
 }
 
 /* 圖片區塊 */
@@ -65,7 +66,6 @@ a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 滑鼠移上去的效果 */
 .image-section img:hover {
   transform: scale(1.05);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
@@ -107,9 +107,10 @@ a:hover {
 
 /* 圓圈裡的圖片設定 */
 .circle-btn img {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 .circle-btn:hover {
@@ -140,6 +141,7 @@ a:hover {
 
   .info-section {
     width: 90%;
+    transform: none;       /* 取消桌面版左移 */
   }
 
   .image-section img {
