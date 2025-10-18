@@ -18,7 +18,7 @@ body {
   top: 0;
   left: 0;
   height: 6px;
-  background: #d476ff;
+  background: #aa8bff;
   z-index: 10;
   transition: width 0.25s ease-out;
 }
